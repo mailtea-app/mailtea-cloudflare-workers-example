@@ -1,0 +1,17 @@
+# Local development only. Copy to `.dev.vars` — `wrangler dev` loads it as
+# bindings on `env`. `.dev.vars` is gitignored; it is never uploaded by
+# `wrangler deploy`.
+#
+# Keep this file to secrets. Every name here SHADOWS the same name in `[vars]`
+# in `wrangler.toml`, so listing `MAILTEA_FROM` here would silently beat the
+# address you set there and send from the placeholder instead. Non-secret
+# config belongs in `[vars]`, and only there.
+#
+# For a deployed Worker, set the key as a secret instead:
+#   wrangler secret put MAILTEA_API_KEY
+
+MAILTEA_API_KEY=mt_pat_your_key_here
+
+# Only for local dev or a self-hosted Mailtea. Leave unset to use production.
+# `[vars]` deliberately does not set this, so there is nothing to shadow.
+# MAILTEA_API_BASE_URL=http://localhost:7787

@@ -1,0 +1,20 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - run: npm test
+      # Bundle the Worker the way `wrangler deploy` would. This needs no
+      # Cloudflare account, and it is the only step that catches a build-time
+      # break such as a missing `nodejs_compat` flag — `npm test` runs on Node,
+      # where the bundle is never built.
+      - run: npx wrangler deploy --dry-run
