@@ -36,7 +36,7 @@ To get the most out of this guide, you'll need to:
    ```bash
    curl -X POST http://localhost:8787/send \
      -H "content-type: application/json" \
-     -d '{"to":"reader@example.com","subject":"Hello","html":"<p>Hi there.</p>"}'
+     -d '{"to":"you@yourdomain.com","subject":"Hello","html":"<p>Hi there.</p>"}'
    ```
    ```json
    { "id": "txemail_a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6" }
