@@ -13,7 +13,7 @@ import { Mailtea, MailteaError } from "mailtea-sdk";
  */
 function mailteaFor(env) {
   return new Mailtea(env.MAILTEA_API_KEY, {
-    // Only needed for local dev or a self-hosted Mailtea. Omit in production.
+    // Optional override of the API host. Unset, the SDK uses https://api.mailtea.app.
     baseUrl: env.MAILTEA_API_BASE_URL,
     // The SDK stores whatever `fetch` it is given and calls it bare. Node and
     // browsers tolerate that; the Workers runtime rejects a `fetch` that has

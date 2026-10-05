@@ -12,6 +12,6 @@
 
 MAILTEA_API_KEY=mt_pat_your_key_here
 
-# Only for local dev or a self-hosted Mailtea. Leave unset to use production.
+# Optional. Overrides the API host, which defaults to https://api.mailtea.app.
 # `[vars]` deliberately does not set this, so there is nothing to shadow.
-# MAILTEA_API_BASE_URL=http://localhost:7787
+# MAILTEA_API_BASE_URL=https://api.mailtea.app

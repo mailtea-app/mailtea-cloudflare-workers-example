@@ -14,6 +14,5 @@ compatibility_flags = ["nodejs_compat"]
 [vars]
 MAILTEA_FROM = "Acme <hello@acme.com>"
 
-# MAILTEA_API_BASE_URL is deliberately unset: the SDK defaults to
-# https://api.mailtea.app. Set it in .dev.vars (local) or as a var here only if
-# you run a self-hosted Mailtea.
+# MAILTEA_API_BASE_URL is deliberately unset, so the SDK uses its default,
+# https://api.mailtea.app.
